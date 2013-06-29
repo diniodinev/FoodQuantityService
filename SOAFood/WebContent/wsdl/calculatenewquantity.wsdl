@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="CalculateQuantityService" targetNamespace="http://ws.fmi.bg.java.main/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ws.fmi.bg.java.main/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+<import namespace="http://ws.fmi.bg.java.main/" schemaLocation="calculatenewquantity_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="calculateQuantity">
+    <wsdl:part name="parameters" element="tns:calculateQuantity">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="calculateQuantityResponse">
+    <wsdl:part name="parameters" element="tns:calculateQuantityResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="CalculateNewQuantitySEI">
+    <wsdl:operation name="calculateQuantity">
+      <wsdl:input name="calculateQuantity" message="tns:calculateQuantity">
+    </wsdl:input>
+      <wsdl:output name="calculateQuantityResponse" message="tns:calculateQuantityResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CalculateQuantityServiceSoapBinding" type="tns:CalculateNewQuantitySEI">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="calculateQuantity">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="calculateQuantity">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="calculateQuantityResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CalculateQuantityService">
+    <wsdl:port name="CalculateQuantityPort" binding="tns:CalculateQuantityServiceSoapBinding">
+      <soap12:address location="http://localhost:8080/FoodQuantityService/services/CalculateQuantityPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,19 @@
+CREATE  TABLE `FoodsDB`.`FoodsTable` (
+  `idFoot` INT NOT NULL AUTO_INCREMENT ,
+  `FoodName` VARCHAR(150) NOT NULL ,
+  `FoodQuantity` INT NOT NULL ,
+  `FoodUnit` VARCHAR(45) NOT NULL ,
+  `Protein` FLOAT NOT NULL ,
+  `Carbs` FLOAT NOT NULL ,
+  `Fats` FLOAT NOT NULL ,
+  `Energy` FLOAT NOT NULL ,
+  `Potassium` FLOAT NOT NULL ,
+  PRIMARY KEY (`idFoot`) );
+  
+  
+  INSERT INTO `FoodsDB`.`FoodsTable` (`idFoot`, `FoodName`, `FoodQuantity`, `FoodUnit`, `Protein`, `Carbs`, `Fats`, `Energy`, `Potassium`) VALUES ('1', 'Пилешки гърди', '100', 'г.', '23,5', '6', '12,56', '219', '61');
+INSERT INTO `FoodsDB`.`FoodsTable` (`idFoot`, `FoodName`, `FoodQuantity`, `FoodUnit`, `Protein`, `Carbs`, `Fats`, `Energy`, `Potassium`) VALUES ('2', 'Яйце', '50', 'г.', '6,25', '5,25', '5,30', '77', '62');
+INSERT INTO `FoodsDB`.`FoodsTable` (`idFoot`, `FoodName`, `FoodQuantity`, `FoodUnit`, `Protein`, `Carbs`, `Fats`, `Energy`, `Potassium`) VALUES ('3', 'Картофи', '100', 'г.', '1,71', '20,01', '0', '86', '328');
+INSERT INTO `FoodsDB`.`FoodsTable` (`FoodName`, `FoodQuantity`, `FoodUnit`, `Protein`, `Carbs`, `Fats`, `Energy`, `Potassium`) VALUES ('Пилешки гърди', '100', 'г.', '23.5', '6', '12.56', '219', '61');
+INSERT INTO `FoodsDB`.`FoodsTable` (`FoodName`, `FoodQuantity`, `FoodUnit`, `Protein`, `Carbs`, `Fats`, `Energy`, `Potassium`) VALUES ('Яйце', '50', 'г.', '6.25', '5.25', '5.30', '77', '62');
+INSERT INTO `FoodsDB`.`FoodsTable` (`FoodName`, `FoodQuantity`, `FoodUnit`, `Protein`, `Carbs`, `Fats`, `Energy`, `Potassium`) VALUES ('Картофи', '100', 'г.', '1.71', '20.01', '0', '86', '328');

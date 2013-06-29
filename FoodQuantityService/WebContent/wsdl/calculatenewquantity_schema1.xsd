@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ws.fmi.bg.java.main/" elementFormDefault="unqualified" targetNamespace="http://ws.fmi.bg.java.main/" version="1.0">
+<xs:element name="calculateQuantity" type="tns:calculateQuantity"/>
+<xs:element name="calculateQuantityResponse" type="tns:calculateQuantityResponse"/>
+<xs:complexType name="calculateQuantity">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:double"/>
+      <xs:element name="arg1" type="xs:double"/>
+      <xs:element name="arg2" type="xs:double"/>
+      <xs:element name="arg3" type="xs:double"/>
+      <xs:element name="arg4" type="xs:double"/>
+      <xs:element name="arg5" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="calculateQuantityResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

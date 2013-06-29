@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="TakeFoodImplService"
+	targetNamespace="http://ws.fmi.bg.java.main/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:tns="http://ws.fmi.bg.java.main/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+	<wsdl:types>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema">
+			<import namespace="http://ws.fmi.bg.java.main/"
+				schemaLocation="takefoodimpl_schema1.xsd" />
+		</schema>
+	</wsdl:types>
+	<wsdl:message name="takeFood">
+		<wsdl:part name="parameters" element="tns:takeFood">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="takeFoodResponse">
+		<wsdl:part name="parameters" element="tns:takeFoodResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="TakeFoodSEI">
+		<wsdl:operation name="takeFood">
+			<wsdl:input name="takeFood" message="tns:takeFood">
+			</wsdl:input>
+			<wsdl:output name="takeFoodResponse" message="tns:takeFoodResponse">
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="TakeFoodImplServiceSoapBinding" type="tns:TakeFoodSEI">
+		<soap12:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="takeFood">
+			<soap12:operation soapAction="" style="document" />
+			<wsdl:input name="takeFood">
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="takeFoodResponse">
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="TakeFoodImplService">
+		<wsdl:port name="TakeFoodImplPort" binding="tns:TakeFoodImplServiceSoapBinding">
+			<soap12:address
+				location="http://localhost:8080/FoodService/services/TakeFoodImplPort" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
